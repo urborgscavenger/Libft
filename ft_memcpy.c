@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:56:19 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 16:02:06 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/03 16:04:30 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,26 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 	return (dest);
 }
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stddef.h>
-#include <stdint.h>
-int	main()
-{
-	char src[] = "Hello, World!";
-	char dest[50] = "";
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
+// #include <unistd.h>
+// #include <stddef.h>
+// #include <stdint.h>
+// int	main()
+// {
+// 	char src[] = "Hello, World!";
+// 	char dest[50] = "";
 
-	ft_memcpy(dest, src, 13);
-	dest[13] = '\0';
-	for (int i = 0; i < 14; i++)
-	{
-		if (dest[i] == '\0')
-			break;
-		putchar(dest[i]);
-	}
-	putchar('\n');
-	printf("%s\n", dest);
-	return 0;
-}
+// 	ft_memcpy(dest, src, 13);
+// 	dest[13] = '\0';
+// 	for (int i = 0; i < 14; i++)
+// 	{
+// 		if (dest[i] == '\0')
+// 			break;
+// 		putchar(dest[i]);
+// 	}
+// 	putchar('\n');
+// 	printf("%s\n", dest);
+// 	return 0;
+// }
