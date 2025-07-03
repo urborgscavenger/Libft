@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/03 15:56:19 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 16:12:05 by mbauer           ###   ########.fr       */
+/*   Created: 2025/07/03 16:05:25 by mbauer            #+#    #+#             */
+/*   Updated: 2025/07/03 16:12:00 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memcpy_recursiv(void *dest, const void *src, unsigned long n, unsigned long i)
+void	ft_memmove_recursiv(void *dest, const void *src, unsigned long n, unsigned long i)
 {
 	if (i < n)
 	{
 		((unsigned char *)dest)[i] = ((const unsigned char *)src)[i];
-		ft_memcpy_recursiv(dest, src, n, i + 1);
+		ft_memmove_recursiv(dest, src, n, i + 1);
 	}
 }
-
-void	*ft_memcpy(void *dest, const void *src, unsigned long n)
+void	*ft_memmove(void *dest, const void *src, unsigned long n)
 {
 	unsigned char			*dest_ptr;
-	const unsigned	char	*src_ptr;
+	const unsigned char		*src_ptr;
 	unsigned long			i;
 
 	if (!dest && !src)
@@ -30,16 +29,20 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 	dest_ptr = (unsigned char *)dest;
 	src_ptr = (const unsigned char *)src;
 	i = 0;
-	ft_memcpy_recursiv(dest_ptr, src_ptr, n, i);
+	if (dest_ptr < src_ptr)
+	{
+		ft_memmove_recursiv(dest_ptr, src_ptr, n, i);
+	}
+	else
+	{
+		while (n-- > 0)
+			dest_ptr[n] = src_ptr[n];
+	}
 	return (dest);
 }
 
-// #include <stdio.h>
 // #include <string.h>
-// #include <stdlib.h>
-// #include <unistd.h>
-// #include <stddef.h>
-// #include <stdint.h>
+// #include <stdio.h>
 // int	main()
 // {
 // 	char src[] = "42";
@@ -47,8 +50,8 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 // 	char src2[] = "42";
 // 	char dest2[50] = "kick-off";
 
-// 	ft_memcpy(dest, src, 13);
-// 	memcpy(dest2, src2, 13);
+// 	ft_memmove(dest, src, 13);
+// 	memmove(dest2, src2, 13);
 // 	dest[13] = '\0';
 // 	for (int i = 0; i < 14; i++)
 // 	{
