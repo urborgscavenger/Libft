@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:53:05 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:05:14 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/10 16:11:16 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 	size_t	i;
 
-	len = strlen(s);
+	len = ft_strlen(s);
 	dup = (char *)malloc(len + 1);
 	if (!dup)
 		return (NULL);

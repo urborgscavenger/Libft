@@ -6,13 +6,13 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 13:28:56 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 14:04:35 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/10 16:10:50 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	size_t	i;
 	size_t	j;

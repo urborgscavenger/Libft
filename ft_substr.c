@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:09:22 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:06:11 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/10 16:12:43 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char *ft_substr(const char *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start >= (unsigned int)strlen(s))
-		return (strdup(""));
-	if (len > strlen(s) - start)
-		len = strlen(s) - start;
+	if (start >= (unsigned int)ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
