@@ -6,9 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 13:49:28 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 14:02:23 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:06:23 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int solve_recursiv(int c, int dst)
 {

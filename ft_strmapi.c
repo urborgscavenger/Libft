@@ -1,48 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 11:53:05 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:05:14 by mbauer           ###   ########.fr       */
+/*   Created: 2025/07/10 13:23:32 by mbauer            #+#    #+#             */
+/*   Updated: 2025/07/10 13:31:39 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
-	char	*dup;
-	size_t	i;
+	char	*result;
+	unsigned int	i;
 
-	len = strlen(s);
-	dup = (char *)malloc(len + 1);
-	if (!dup)
+	if (!s || !f)
+		return (NULL);
+	result = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!result)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (s[i])
 	{
-		dup[i] = s[i];
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	dup[i] = '\0';
-	return (dup);
+	result[i] = '\0';
+	return (result);
 }
 
-int	main(void)
+int	main()
 {
-	const char *original = "Hello, World!";
-	char *duplicate;
+	char str[] = "hello";
+	char (*func)(unsigned int, char);
+	char *result;
 
-	duplicate = ft_strdup(original);
-	if (duplicate)
+	result = ft_strmapi(str, func);
+	if (result)
 	{
-		printf("Original: %s\n", original);
-		printf("Duplicate: %s\n", duplicate);
-		free(duplicate); // Don't forget to free the allocated memory
+		printf("Original: %s\nModified: %s\n", str, result);
+		free(result); // Don't forget to free the allocated memory
 	}
 	else
 	{

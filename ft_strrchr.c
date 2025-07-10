@@ -6,12 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:44:23 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/08 11:44:57 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:42:20 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strrchr_recursiv(const char *s, int c, int ct)
 {
@@ -34,22 +33,22 @@ char	*ft_strrchr(const char *s, int c)
 	return (ft_strrchr_recursiv(s, c, 0));
 }
 
-int	main()
-{
-	char str[] = "Hello, World!";
-	char *result;
-	char *result2;
+// int	main()
+// {
+// 	char str[] = "Hello, World!";
+// 	char *result;
+// 	char *result2;
 
-	result2 = strrchr(str, 'z');
-	result = ft_strrchr(str, 'W');
-	if (result)
-		printf("Found character 'W': %s\n", result);
-	else
-		printf("Character 'W' not found.\n");
-	printf("OG\n");
-	if (result2)
-		printf("Found character 'z': %s\n", result2);
-	else
-		printf("Character 'z' not found.\n");
-	return 0;
-}
+// 	result2 = strrchr(str, 'z');
+// 	result = ft_strrchr(str, 'W');
+// 	if (result)
+// 		printf("Found character 'W': %s\n", result);
+// 	else
+// 		printf("Character 'W' not found.\n");
+// 	printf("OG\n");
+// 	if (result2)
+// 		printf("Found character 'z': %s\n", result2);
+// 	else
+// 		printf("Character 'z' not found.\n");
+// 	return 0;
+// }

@@ -6,12 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 12:50:36 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 14:03:19 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:03:32 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

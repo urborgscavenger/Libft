@@ -6,11 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:40:03 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 15:55:01 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:18:39 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 
 void	ft_bzero_recursiv(void *s, unsigned long n, unsigned long i)
 {
@@ -31,8 +31,6 @@ void	ft_bzero(void *s, unsigned long n)
 	ft_bzero_recursiv(ptr, n, i);
 }
 
-// #include <stdio.h>
-// #include <string.h>
 // int	main(void)
 // {
 // 	char str[50] = "Hello, World!";

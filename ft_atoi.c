@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:50:59 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/08 11:51:26 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/08 12:38:38 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-#include <stdio.h>
+#include "libft.h"
+
 int	main(void)
 {
 	const char *str1 = "   -12345";

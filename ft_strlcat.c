@@ -6,12 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:42:19 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/08 11:43:23 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:05:29 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {

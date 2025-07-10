@@ -6,12 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:45:40 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/08 11:46:07 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:05:54 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

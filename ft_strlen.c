@@ -6,9 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 14:46:23 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 14:51:56 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:05:40 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_len_recursiv(const char *s, int i)
 {

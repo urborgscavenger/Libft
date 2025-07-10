@@ -6,12 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:00:59 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 15:14:07 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:05:03 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	mset_recursiv(void *dist, int c, size_t n, size_t i)
 {

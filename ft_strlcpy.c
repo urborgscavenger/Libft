@@ -6,13 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:31:08 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/08 11:35:41 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:05:34 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h> // For size_t
-#include <string.h> // For size_t
-#include <stdio.h> // For size_t
+#include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {

@@ -6,9 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:05:25 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 16:12:00 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:42:24 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_memmove_recursiv(void *dest, const void *src, unsigned long n, unsigned long i)
 {

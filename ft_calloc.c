@@ -6,11 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:51:56 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/08 11:52:15 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:06:27 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

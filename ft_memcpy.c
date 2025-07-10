@@ -6,9 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:56:19 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 16:12:05 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:04:42 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_memcpy_recursiv(void *dest, const void *src, unsigned long n, unsigned long i)
 {

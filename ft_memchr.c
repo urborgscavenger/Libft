@@ -6,12 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:46:31 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/08 11:47:04 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:03:52 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h> // For size_t
-#include <string.h> // For size_t
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

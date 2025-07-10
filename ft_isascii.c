@@ -6,13 +6,11 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 13:39:49 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/03 13:41:58 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/09 11:03:14 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <limits.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
