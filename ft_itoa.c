@@ -6,30 +6,32 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 14:04:44 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/10 13:31:39 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:28:23 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+// Helper function to calculate the length of the number
+static int	get_number_length(int n)
 {
-	char	*result;
-	int		len;
-	int		temp;
-	int		sign;
+	int	len;
 
-	sign = (n < 0) ? -1 : 1;
-	temp = n;
-	len = (n <= 0) ? 1 : 0;
-	while (temp)
+	if (n <= 0)
+		len = 1;
+	else
+		len = 0;
+	while (n)
 	{
-		temp /= 10;
+		n /= 10;
 		len++;
 	}
-	result = malloc(len + 1);
-	if (!result)
-		return (NULL);
+	return (len);
+}
+
+// Helper function to convert the number to a string
+static void	convert_to_string(char *result, int n, int len, int sign)
+{
 	result[len] = '\0';
 	if (n == 0)
 		result[0] = '0';
@@ -40,23 +42,38 @@ char	*ft_itoa(int n)
 	}
 	if (sign < 0)
 		result[0] = '-';
+}
+
+// Main ft_itoa function
+char	*ft_itoa(int n)
+{
+	char	*result;
+	int		len;
+	int		sign;
+
+	sign = (n < 0) ? -1 : 1;
+	len = get_number_length(n);
+	result = malloc(len + 1);
+	if (!result)
+		return (NULL);
+	convert_to_string(result, n, len, sign);
 	return (result);
 }
 
-int	main()
-{
-	int number = -12345;
-	char *str;
+// int	main(void)
+// {
+// 	int number = -12345;
+// 	char *str;
 
-	str = ft_itoa(number);
-	if (str)
-	{
-		printf("The integer %d as a string is: %s\n", number, str);
-		free(str); // Don't forget to free the allocated memory
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-	return 0;
-}
+// 	str = ft_itoa(number);
+// 	if (str)
+// 	{
+// 		printf("The integer %d as a string is: %s\n", number, str);
+// 		free(str); // Don't forget to free the allocated memory
+// 	}
+// 	else
+// 	{
+// 		printf("Memory allocation failed.\n");
+// 	}
+// 	return (0);
+// }

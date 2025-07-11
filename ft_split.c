@@ -6,21 +6,18 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 13:28:56 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/10 16:10:50 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:27:48 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(const char *s, char c)
+// Helper function to count the number of words
+static size_t	count_words(const char *s, char c)
 {
-	size_t	i;
-	size_t	j;
 	size_t	word_count;
-	char	**result;
+	size_t	i;
 
-	if (!s)
-		return (NULL);
 	word_count = 0;
 	i = 0;
 	while (s[i])
@@ -29,48 +26,66 @@ char	**ft_split(const char *s, char c)
 			word_count++;
 		i++;
 	}
+	return (word_count);
+}
+
+// Recursive helper function to split the string
+static void	split_recursiv(const char *s, char c, char **result, size_t i)
+{
+	size_t	start;
+
+	while (*s && *s == c)
+		s++;
+	if (!*s)
+	{
+		result[i] = NULL;
+		return ;
+	}
+	start = 0;
+	while (s[start] && s[start] != c)
+		start++;
+	result[i] = ft_substr(s, 0, start);
+	split_recursiv(s + start, c, result, i + 1);
+}
+
+// Main ft_split function
+char	**ft_split(const char *s, char c)
+{
+	size_t	word_count;
+	char	**result;
+
+	if (!s)
+		return (NULL);
+	word_count = count_words(s, c);
 	result = malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (j < word_count)
-	{
-		size_t start = i;
-		while (s[i] && s[i] != c)
-			i++;
-		result[j] = ft_substr(s, start, i - start);
-		j++;
-		while (s[i] && s[i] == c)
-			i++;
-	}
-	result[j] = NULL;
+	split_recursiv(s, c, result, 0);
 	return (result);
 }
 
-int	main(void)
-{
-	const char *str = "Hello, World! This is a test.";
-	char **result;
-	size_t i;
+// int	main(void)
+// {
+// 	const char *str = "Hello, World! This is a test.";
+// 	char **result;
+// 	size_t i;
 
-	result = ft_split(str, ' ');
-	result = ft_split(str, ' ');
-	if (result)
-	{
-		i = 0;
-		while (result[i])
-		{
-			printf("Word %zu: %s\n", i, result[i]);
-			free(result[i]); // Free each word
-			i++;
-		}
-		free(result); // Free the array of pointers
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-	return 0;
-}
-
+// 	result = ft_split(str, ' ');
+// 	result = ft_split(str, ' ');
+// 	if (result)
+// 	{
+// 		i = 0;
+// 		while (result[i])
+// 		{
+// 			printf("Word %zu: %s\n", i, result[i]);
+// 			free(result[i]); // Free each word
+// 			i++;
+// 		}
+// 		free(result); // Free the array of pointers
+// 	}
+// 	else
+// 	{
+// 		printf("Memory allocation failed.\n");
+// 	}
+// 	return (0);
+// }

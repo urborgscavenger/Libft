@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:44:23 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:42:20 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:28:29 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,30 @@
 
 char	*ft_strrchr_recursiv(const char *s, int c, int ct)
 {
+	char	*res;
+
 	if (s[ct] == '\0')
-		return (0);
-	if (s[ct] == (char)c)
+	{
+		if ((unsigned char)c == '\0')
+			return ((char *)&s[ct]);
+		return (NULL);
+	}
+	res = ft_strrchr_recursiv(s, c, ct + 1);
+	if (res)
+		return (res);
+	if (s[ct] == (unsigned char)c)
 		return ((char *)&s[ct]);
-	return (ft_strrchr_recursiv(s, c, ct + 1));
+	return (NULL);
 }
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
-
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	if (c == '\0')
-		return ((char *)&s[len]);
-	return (ft_strrchr_recursiv(s, c, 0));
+	if (!s)
+		return (NULL);
+	return ft_strrchr_recursiv(s, c, 0);
 }
 
-// int	main()
+// int	main(void)
 // {
 // 	char str[] = "Hello, World!";
 // 	char *result;
@@ -50,5 +54,5 @@ char	*ft_strrchr(const char *s, int c)
 // 		printf("Found character 'z': %s\n", result2);
 // 	else
 // 		printf("Character 'z' not found.\n");
-// 	return 0;
+// 	return (0);
 // }

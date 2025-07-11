@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:53:05 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/10 16:11:16 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/10 17:13:10 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,21 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-int	main(void)
-{
-	const char *original = "Hello, World!";
-	char *duplicate;
+// int	main(void)
+// {
+// 	const char *original = "Hello, World!";
+// 	char *duplicate;
 
-	duplicate = ft_strdup(original);
-	if (duplicate)
-	{
-		printf("Original: %s\n", original);
-		printf("Duplicate: %s\n", duplicate);
-		free(duplicate); // Don't forget to free the allocated memory
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-	return 0;
-}
+// 	duplicate = ft_strdup(original);
+// 	if (duplicate)
+// 	{
+// 		printf("Original: %s\n", original);
+// 		printf("Duplicate: %s\n", duplicate);
+// 		free(duplicate); // Don't forget to free the allocated memory
+// 	}
+// 	else
+// 	{
+// 		printf("Memory allocation failed.\n");
+// 	}
+// 	return 0;
+// }

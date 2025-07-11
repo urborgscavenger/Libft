@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:07:51 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/10 15:08:42 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 12:08:59 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == INT_MIN)
 	{
 		ft_putstr_fd("-2147483648", fd);
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
@@ -29,14 +29,14 @@ void	ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd((n % 10) + '0', fd);
 }
 
-int	main(void)
-{
-	int fd = 1; // Standard output
-	ft_putnbr_fd(12345, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(-67890, fd);
-	ft_putchar_fd('\n', fd);
-	ft_putnbr_fd(INT_MIN, fd);
-	ft_putchar_fd('\n', fd);
-	return 0;
-}
+// int	main(void)
+// {
+// 	int fd = 1; // Standard output
+// 	ft_putnbr_fd(12345, fd);
+// 	ft_putchar_fd('\n', fd);
+// 	ft_putnbr_fd(-67890, fd);
+// 	ft_putchar_fd('\n', fd);
+// 	ft_putnbr_fd(INT_MIN, fd);
+// 	ft_putchar_fd('\n', fd);
+// 	return 0;
+// }

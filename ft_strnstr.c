@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:49:32 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:02:49 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/10 17:00:07 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-int	main()
-{
-	const char *haystack = "Hello, World!";
-	const char *needle = "World";
-	size_t len = 20;
+// int	main()
+// {
+// 	const char *haystack = "Hello, World!";
+// 	const char *needle = "World";
+// 	size_t len = 20;
 
-	char *result = ft_strnstr(haystack, needle, len);
-	if (result)
-		printf("Found substring '%s' in '%s': %s\n", needle, haystack, result);
-	else
-		printf("Substring '%s' not found in '%s'.\n", needle, haystack);
+// 	char *result = ft_strnstr(haystack, needle, len);
+// 	if (result)
+// 		printf("Found substring '%s' in '%s': %s\n", needle, haystack, result);
+// 	else
+// 		printf("Substring '%s' not found in '%s'.\n", needle, haystack);
 
-	return 0;
-}
+// 	return 0;
+// }

@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:01:04 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/10 15:03:15 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 12:09:04 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr_fd(const char *s, int fd)
 {
 	if (s == NULL)
-		return;
+		return ;
 	while (*s)
 	{
 		ft_putchar_fd(*s, fd);
@@ -23,11 +23,11 @@ void	ft_putstr_fd(const char *s, int fd)
 	}
 }
 
-int	main(void)
-{
-	const char *str = "Hello, World!";
-	int fd = 1; // Standard output
+// int	main(void)
+// {
+// 	const char *str = "Hello, World!";
+// 	int fd = 1; // Standard output
 
-	ft_putstr_fd(str, fd);
-	return 0;
-}
+// 	ft_putstr_fd(str, fd);
+// 	return 0;
+// }
