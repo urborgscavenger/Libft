@@ -6,11 +6,24 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 13:28:56 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 14:27:48 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 15:00:02 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	free_split(char **result, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(result[i]);
+		i++;
+	}
+	free(result);
+}
 
 // Helper function to count the number of words
 static size_t	count_words(const char *s, char c)
@@ -30,22 +43,31 @@ static size_t	count_words(const char *s, char c)
 }
 
 // Recursive helper function to split the string
-static void	split_recursiv(const char *s, char c, char **result, size_t i)
+static int	split_recursiv(const char *s, char c, char **result, size_t i)
 {
 	size_t	start;
+	int		ret;
 
+	start = 0;
 	while (*s && *s == c)
 		s++;
 	if (!*s)
 	{
 		result[i] = NULL;
-		return ;
+		return (i);
 	}
-	start = 0;
 	while (s[start] && s[start] != c)
 		start++;
 	result[i] = ft_substr(s, 0, start);
-	split_recursiv(s + start, c, result, i + 1);
+	if (!result[i])
+		return (-1);
+	ret = split_recursiv(s + start, c, result, i + 1);
+	if (ret == -1)
+	{
+		free(result[i]);
+		return (-1);
+	}
+	return (ret);
 }
 
 // Main ft_split function
@@ -53,6 +75,7 @@ char	**ft_split(const char *s, char c)
 {
 	size_t	word_count;
 	char	**result;
+	int		allocated;
 
 	if (!s)
 		return (NULL);
@@ -60,7 +83,17 @@ char	**ft_split(const char *s, char c)
 	result = malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
-	split_recursiv(s, c, result, 0);
+	allocated = split_recursiv(s, c, result, 0);
+	if (allocated == -1)
+	{
+		free_split(result, 0);
+		return (NULL);
+	}
+	if (allocated < (int)word_count)
+	{
+		free_split(result, allocated);
+		return (NULL);
+	}
 	return (result);
 }
 

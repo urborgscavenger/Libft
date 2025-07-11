@@ -6,38 +6,40 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:42:19 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/10 16:15:08 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:43:29 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dst_len = 0;
-	size_t src_len = 0;
-	size_t i;
+	size_t	dst_len;
+	size_t	src_len;
+	size_t	i;
 
+	i = 0;
+	dst_len = 0;
+	src_len = 0;
 	while (dst[dst_len] && dst_len < size)
 		dst_len++;
-	
 	while (src[src_len])
 		src_len++;
-
 	if (dst_len >= size)
 		return (size + src_len);
-
 	if (size > 0 && dst_len < size - 1)
 	{
-		for (i = 0; i < src_len && dst_len + i < size - 1; i++)
+		while (i < src_len && dst_len + i < size - 1)
+		{
 			dst[dst_len + i] = src[i];
+			i++;
+		}
 		dst[dst_len + i] = '\0';
 	}
-
 	return (dst_len + src_len);
 }
 
-// int	main()
+// int	main(void)
 // {
 // 	char dest[20] = "Hello, ";
 // 	char dest2[20] = "Hello, ";
@@ -54,5 +56,5 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 // 	printf("OG Resulting string: %s\n", dest2);
 // 	printf("OG Total length after concatenation: %zu\n", result2);
 
-// 	return 0;
+// 	return (0);
 // }

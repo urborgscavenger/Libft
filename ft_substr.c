@@ -6,37 +6,38 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:09:22 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 12:16:14 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:52:17 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_substr_recursiv(const char *s, char *result, unsigned int start,
-		size_t len, size_t i)
+static void	ft_substr_recursiv(const char *src, char *dst, size_t len)
 {
-	if (i >= len || s[start + i] == '\0')
+	if (len == 0 || *src == '\0')
 	{
-		result[i] = '\0';
+		*dst = '\0';
 		return ;
 	}
-	result[i] = s[start + i];
-	ft_substr_recursiv(s, result, start, len, i + 1);
+	*dst = *src;
+	ft_substr_recursiv(src + 1, dst + 1, len - 1);
 }
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*substr;
+	size_t	s_len;
 
 	if (!s)
 		return (NULL);
-	if (start >= (unsigned int)ft_strlen(s))
+	s_len = ft_strlen(s);
+	if (start >= s_len)
 		return (ft_strdup(""));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
+	if (len > s_len - start)
+		len = s_len - start;
 	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	ft_substr_recursiv(s, substr, start, len, 0);
+	ft_substr_recursiv(s + start, substr, len);
 	return (substr);
 }
