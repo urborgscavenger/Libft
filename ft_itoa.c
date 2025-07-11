@@ -6,13 +6,12 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 14:04:44 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 14:28:23 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:35:41 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Helper function to calculate the length of the number
 static int	get_number_length(int n)
 {
 	int	len;
@@ -29,7 +28,6 @@ static int	get_number_length(int n)
 	return (len);
 }
 
-// Helper function to convert the number to a string
 static void	convert_to_string(char *result, int n, int len, int sign)
 {
 	result[len] = '\0';
@@ -51,7 +49,10 @@ char	*ft_itoa(int n)
 	int		len;
 	int		sign;
 
-	sign = (n < 0) ? -1 : 1;
+	if (n < 0)
+		sign = -1;
+	else
+		sign = 1;
 	len = get_number_length(n);
 	result = malloc(len + 1);
 	if (!result)

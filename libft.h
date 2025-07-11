@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/11 14:41:17 by mbauer            #+#    #+#             */
+/*   Updated: 2025/07/11 14:42:42 by mbauer           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <ctype.h>
+# include <ctype.h>
+# include <limits.h>
+# include <stddef.h>
+# include <stdio.h>
+# include <stdio.h>
 # include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-#include <stddef.h>
-#include <ctype.h>
-#include <unistd.h>
+# include <unistd.h>
 
 // Function prototypes
 void	*ft_calloc(size_t count, size_t size);
@@ -38,7 +50,7 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	**ft_split(const char *s, char c);
 void	ft_strdel(char **str);
 void	ft_putchar_fd(char c, int fd);

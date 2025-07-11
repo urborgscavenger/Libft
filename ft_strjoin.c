@@ -6,33 +6,30 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:27:49 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 12:21:06 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:34:38 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Recursive helper function to copy characters from s1 and s2 into result
-static void	copy_recursive(const char *s1, const char *s2, char *result,
-		size_t i, size_t len1)
+static void	copy_recursive(const char *s1, const char *s2, char *result)
 {
-	if (i < len1)
+	if (*s1)
 	{
-		result[i] = s1[i];
-		copy_recursive(s1, s2, result, i + 1, len1);
+		*result = *s1;
+		copy_recursive(s1 + 1, s2, result + 1);
 	}
-	else if (s2[i - len1])
+	else if (*s2)
 	{
-		result[i] = s2[i - len1];
-		copy_recursive(s1, s2, result, i + 1, len1);
+		*result = *s2;
+		copy_recursive(s1, s2 + 1, result + 1);
 	}
 	else
 	{
-		result[i] = '\0';
+		*result = '\0';
 	}
 }
 
-// Main ft_strjoin function
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	len1;
@@ -46,7 +43,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	result = malloc(len1 + len2 + 1);
 	if (!result)
 		return (NULL);
-	copy_recursive(s1, s2, result, 0, len1);
+	copy_recursive(s1, s2, result);
 	return (result);
 }
 

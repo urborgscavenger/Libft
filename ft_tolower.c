@@ -6,13 +6,13 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 13:49:28 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:06:17 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 14:40:49 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int solve_recursiv(int c, int dst)
+int	solve_recursiv(int c, int dst)
 {
 	if (c == dst)
 		return (c);
@@ -25,14 +25,14 @@ int solve_recursiv(int c, int dst)
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return(solve_recursiv(c, c + 32));
+		return (solve_recursiv(c, c + 32));
 	return (c);
 }
 
 // #include <stdio.h>
 // #include <ctype.h>
 
-// int	main()
+// int	main(void)
 // {
 // 	char test_chars[] = {'a', 1, 'A', '!', 'b', 'Z', 'a', '\t', '0', '\0'};
 // 	int i = 0;
@@ -40,13 +40,17 @@ int	ft_tolower(int c)
 // 	while (test_chars[i] != '\0')
 // 	{
 // 		if (ft_tolower(test_chars[i]))
-// 			printf("'%c' to upper is '%c'. %d\n", test_chars[i], ft_tolower(test_chars[i]), ft_tolower(test_chars[i]));
+// 			printf("'%c' to upper is '%c'. %d\n", test_chars[i],
+// 				ft_tolower(test_chars[i]), ft_tolower(test_chars[i]));
 // 		else
-// 			printf("'%c' cannot be resolved to upper. %d\n", test_chars[i], ft_tolower(test_chars[i]));
+// 			printf("'%c' cannot be resolved to upper. %d\n", test_chars[i],
+// 				ft_tolower(test_chars[i]));
 // 		if (tolower(test_chars[i]))
-// 			printf("'%c' to upper original is '%c'. %d\n", test_chars[i], tolower(test_chars[i]), tolower(test_chars[i]));
+// 			printf("'%c' to upper original is '%c'. %d\n", test_chars[i],
+// 				tolower(test_chars[i]), tolower(test_chars[i]));
 // 		else
-// 			printf("'%c' cannot be resolved to upper original %d.\n", test_chars[i], tolower(test_chars[i]));
+// 			printf("'%c' cannot be resolved to upper original %d.\n",
+// 				test_chars[i], tolower(test_chars[i]));
 // 		i++;
 // 	}
 // 	return (0);
