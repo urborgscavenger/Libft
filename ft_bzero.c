@@ -6,13 +6,13 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:40:03 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:18:39 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/17 10:10:47 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero_recursiv(void *s, unsigned long n, unsigned long i)
+static void	ft_bzero_recursiv(void *s, unsigned long n, unsigned long i)
 {
 	if (i < n)
 	{
