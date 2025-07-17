@@ -6,13 +6,13 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 13:49:28 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 14:40:40 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/17 10:10:54 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	solve_recursiv(int c, int dst)
+static int	solve_recursiv(int c, int dst)
 {
 	if (c == dst)
 		return (c);
