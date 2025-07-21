@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:51:56 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 11:23:36 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/21 09:41:00 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	*ft_calloc(size_t count, size_t size)
 
 	i = 0;
 	total_size = count * size;
-	if (total_size == 0)
-		return (NULL);
 	ptr = malloc(total_size);
 	if (!ptr)
 		return (NULL);
