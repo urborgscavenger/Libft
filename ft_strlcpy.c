@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:31:08 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 14:36:57 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/21 09:43:33 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ static size_t	ft_strlcpy_recursiv(char *dst, const char *src, size_t size,
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	if (!src)
-		return (0);
-	if (size == 0)
-		return (ft_strlen(src));
 	return (ft_strlcpy_recursiv(dst, src, size, 0));
 }
 

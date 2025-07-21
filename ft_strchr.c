@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:34:22 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/11 13:36:57 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/21 09:40:55 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ char	*ft_strchr_recursiv(const char *s, int c, int ct)
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
 	if (c == '\0')
 	{
 		while (*s)

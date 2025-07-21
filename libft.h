@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 14:41:17 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/14 17:09:04 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/21 09:45:48 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,5 @@ void				ft_putstr_fd(const char *s, int fd);
 char				*ft_itoa(int n);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 #endif
