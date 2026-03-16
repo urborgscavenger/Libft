@@ -6,13 +6,14 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:56:19 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:04:42 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 12:06:41 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memcpy_recursiv(void *dest, const void *src, unsigned long n, unsigned long i)
+void	ft_memcpy_recursiv(void *dest, const void *src, unsigned long n,
+		unsigned long i)
 {
 	if (i < n)
 	{
@@ -23,9 +24,9 @@ void	ft_memcpy_recursiv(void *dest, const void *src, unsigned long n, unsigned l
 
 void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 {
-	unsigned char			*dest_ptr;
-	const unsigned	char	*src_ptr;
-	unsigned long			i;
+	unsigned char		*dest_ptr;
+	const unsigned char	*src_ptr;
+	unsigned long		i;
 
 	if (!dest && !src)
 		return (0);
@@ -42,7 +43,7 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 // #include <unistd.h>
 // #include <stddef.h>
 // #include <stdint.h>
-// int	main()
+// int	main(void)
 // {
 // 	char src[] = "42";
 // 	char dest[50] = "kick-off";
@@ -55,11 +56,11 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 // 	for (int i = 0; i < 14; i++)
 // 	{
 // 		if (dest[i] == '\0')
-// 			break;
+// 			break ;
 // 		putchar(dest[i]);
 // 	}
 // 	putchar('\n');
 // 	printf("%s\n", dest);
 // 	printf("%s -->> OG\n", dest2);
-// 	return 0;
+// 	return (0);
 // }

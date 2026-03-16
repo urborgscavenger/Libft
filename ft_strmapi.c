@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:23:32 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/10 13:31:39 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/10 17:00:20 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
-int	main()
-{
-	char str[] = "hello";
-	char (*func)(unsigned int, char);
-	char *result;
+// int	main()
+// {
+// 	char str[] = "hello";
+// 	char (*func)(unsigned int, char);
+// 	char *result;
 
-	result = ft_strmapi(str, func);
-	if (result)
-	{
-		printf("Original: %s\nModified: %s\n", str, result);
-		free(result); // Don't forget to free the allocated memory
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-	return 0;
-}
+// 	result = ft_strmapi(str, func);
+// 	if (result)
+// 	{
+// 		printf("Original: %s\nModified: %s\n", str, result);
+// 		free(result); // Don't forget to free the allocated memory
+// 	}
+// 	else
+// 	{
+// 		printf("Memory allocation failed.\n");
+// 	}
+// 	return 0;
+// }

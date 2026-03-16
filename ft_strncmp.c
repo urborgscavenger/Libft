@@ -6,7 +6,7 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:45:40 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:05:54 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/10 16:59:29 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int	main()
-{
-	const char *str1 = "Hello, World!";
-	const char *str2 = "Hello, World!";
-	const char *str3 = "Hello, Universe!";
-	size_t n = 5;
+// int	main()
+// {
+// 	const char *str1 = "Hello, World!";
+// 	const char *str2 = "Hello, World!";
+// 	const char *str3 = "Hello, Universe!";
+// 	size_t n = 5;
 
-	int result1 = ft_strncmp(str1, str2, n);
-	int result2 = ft_strncmp(str1, str3, n);
+// 	int result1 = ft_strncmp(str1, str2, n);
+// 	int result2 = ft_strncmp(str1, str3, n);
 
-	printf("Comparison of '%s' and '%s' for first %zu characters: %d\n", str1, str2, n, result1);
-	printf("Comparison of '%s' and '%s' for first %zu characters: %d\n", str1, str3, n, result2);
+// 	printf("Comparison of '%s' and '%s' for first %zu characters: %d\n", str1, str2, n, result1);
+// 	printf("Comparison of '%s' and '%s' for first %zu characters: %d\n", str1, str3, n, result2);
 
-	return 0;
-}
+// 	return 0;
+// }

@@ -6,31 +6,41 @@
 /*   By: mbauer <mbauer@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 11:31:08 by mbauer            #+#    #+#             */
-/*   Updated: 2025/07/09 11:05:34 by mbauer           ###   ########.fr       */
+/*   Updated: 2025/07/11 13:22:02 by mbauer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+// Recursive helper function to copy characters
+static size_t	ft_strlcpy_recursiv(char *dst, const char *src, size_t size, size_t i)
 {
-	size_t i;
-
-	if (size == 0)
-		return (0);
-	i = 0;
-	while (i < size - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	while (src[i] != '\0')
-		i++;
-	return (i);
+    if (src[i] == '\0')
+    {
+        if (i < size)
+            dst[i] = '\0';
+        return (i);
+    }
+    if (i < size - 1 && size > 0)
+    {
+        dst[i] = src[i];
+        return ft_strlcpy_recursiv(dst, src, size, i + 1);
+    }
+    if (i == size - 1 && size > 0)
+        dst[i] = '\0';
+    return ft_strlcpy_recursiv(dst, src, size, i + 1);
 }
 
-// int	main()
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+    if (!src)
+        return (0);
+    if (size == 0)
+        return ft_strlen(src);
+    return ft_strlcpy_recursiv(dst, src, size, 0);
+}
+
+// int	main(void)
 // {
 // 	char dest[20];
 // 	char dest2[20];
@@ -44,5 +54,5 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 // 	copied = strlcpy(dest2, src2, sizeof(dest2));
 // 	printf("OG Copied string: %s\n", dest2);
 // 	printf("OG Number of characters copied: %zu\n", copied);
-// 	return 0;
+// 	return (0);
 // }
